@@ -2,8 +2,7 @@ import React from "react";
 import ClockItem from "./ClockItem";
 
 export default function ClockList(props) {
-  const { clocks, onDelete } = props;
-  console.log(props);
+  const { clocks } = props;
   return (
     <div className="clock-list">
       {clocks.map((clock) => (
@@ -11,7 +10,7 @@ export default function ClockList(props) {
           id={clock.key}
           name={clock.name}
           time={clock.time}
-          onDelete={onDelete}
+          deleteClock={props.deleteClock}
         />
       ))}
     </div>

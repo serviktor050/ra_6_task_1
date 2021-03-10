@@ -11,6 +11,7 @@ export default class ClockItem extends Component {
       name: "",
       time: this.convertedTime(this.props.time),
     };
+    this.onCloseClock = this.onCloseClock.bind(this);
   }
 
   convertedTime(number) {
@@ -35,7 +36,7 @@ export default class ClockItem extends Component {
   }
 
   onCloseClock() {
-    this.props.onDelete(this.props.id);
+    this.props.deleteClock(this.props.id);
   }
 
   render() {

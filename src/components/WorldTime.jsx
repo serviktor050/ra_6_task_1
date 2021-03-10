@@ -30,14 +30,18 @@ export default function WorldTime() {
   const clocksViewData = state.map(clocksMapper);
 
   const deleteClock = (id) => {
-    setState((prev) => prev.filter((item) => item.id !== id));
+    setState((prev) => {
+      return prev.filter((item) => {
+        return item.id !== id;
+      });
+    });
   };
 
   return (
     <>
       <MoscowTime />
       <AddClock onNewClock={onNewClock} />
-      <ClockList clocks={clocksViewData} onDelete={deleteClock} />
+      <ClockList clocks={clocksViewData} deleteClock={deleteClock} />
     </>
   );
 }

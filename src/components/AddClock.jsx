@@ -9,8 +9,6 @@ const DEFAULT_FORM = {
 export default function AddClock(props) {
   const { onNewClock } = props;
 
-  console.log(onNewClock);
-
   const [state, setState] = useState(DEFAULT_FORM);
 
   const onFormFieldChangeName = (e) => {
@@ -28,7 +26,7 @@ export default function AddClock(props) {
     setState((prev) => {
       const newState = {
         ...prev,
-        time: Number(e.target.value),
+        time: e.target.value,
       };
       return newState;
     });
