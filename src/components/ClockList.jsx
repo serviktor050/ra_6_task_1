@@ -7,6 +7,7 @@ export default function ClockList(props) {
     <div className="clock-list">
       {clocks.map((clock) => (
         <ClockItem
+          key={clock.key}
           id={clock.key}
           name={clock.name}
           time={clock.time}
